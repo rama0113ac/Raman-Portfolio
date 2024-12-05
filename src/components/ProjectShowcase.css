@@ -1,0 +1,231 @@
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.9);
+    opacity: 0;
+    animation: fadeInScale 0.8s forwards;
+}
+
+.card-img-top:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    filter: brightness(1);
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.project-showcase {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-backdrop.show {
+    opacity: 0.8;
+    backdrop-filter: blur(8px);
+    z-index: 1040;
+}
+
+.custom-modal {
+    background: #ffffff;
+    color: #333;
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.custom-modal .modal-header {
+    border-bottom: 3px solid #dcdcdc;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.custom-modal .modal-title {
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+}
+
+.close {
+    color: #333;
+    font-size: 35px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff4747;
+    transform: scale(1.2);
+}
+
+.custom-modal .modal-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-height: 60vh;
+    overflow: hidden;
+    padding: 10px 0;
+    flex: 1;
+}
+
+.modal-image {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.modal-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.custom-modal .modal-body .col-md-6 {
+    padding: 0 15px;
+    flex: 1;
+}
+
+.custom-modal h5 {
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #444;
+}
+
+.custom-modal p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+}
+
+.custom-modal .btn-link {
+    text-decoration: none;
+    color: #1e90ff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.custom-modal .btn-link:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+.modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translateY(-50%);
+}
+
+.modal.fade .modal-dialog {
+    transform: translateY(0);
+}
+
+.modal-backdrop.show {
+    opacity: 0.8;
+}
+
+.custom-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+    .card-img-top {
+        height: 200px;
+    }
+    .custom-modal .modal-body {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-showcase {
+        padding: 30px;
+    }
+    .card-img-top {
+        height: 200px;
+    }
+    .custom-modal .modal-body {
+        flex-direction: column;
+    }
+    .modal-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .modal-dialog {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-img-top {
+        height: 150px;
+    }
+    .modal-title {
+        font-size: 22px;
+    }
+    .modal-image {
+        max-width: 100%;
+        height: 200px;
+    }
+    .custom-modal .modal-body {
+        padding: 10px;
+    }
+    .close {
+        font-size: 30px;
+    }
+}

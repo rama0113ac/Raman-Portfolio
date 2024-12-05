@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #262D50;
+    background-size: cover;
+    color: #ffffff;
+    position: relative;
+}
+
+
+.overview-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+  }
+  
+  .overview-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #ff7f50; 
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+  }
+  
